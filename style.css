@@ -1,0 +1,435 @@
+body {
+font-family: "游ゴシック","YuGothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+font-size: 14px;
+font-weight: 500;
+position: relative;
+z-index: 1;
+margin: 0;
+padding: 0;
+}
+
+.header-container {
+  padding: 20px 0px 20px 0px;
+  position: absolute;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1080px) {
+  .header-container {
+    position: relative;
+    padding: 10px 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header-container {
+    position: relative;
+    margin: 0%;
+  }
+}
+
+.header_contents {
+  display: flex;
+  margin: 0px 36px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-contents {
+   margin: 0px 20px; /*反映されない*/
+  }
+}
+
+.header-logo {
+  display: flex;
+  width: auto;
+  height: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-logo {
+   height: 16px;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  width: fit-content;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 900;
+  color: #333;
+  line-height: 14px;
+}
+
+nav a, a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.hamburger_navigation {
+  display: none;
+}
+
+
+@media only screen and (max-width: 1080px) {
+  .navigation {
+    display: none;
+  }
+
+  .hamburger_navigation {
+    display: block;
+    position: relative; 
+    z-index: 100;
+  }
+
+  .hamburger_checkbox {
+    display: none;
+  }
+
+  .hamburger_checkbox:checked + .hamburger_navigation_contents {
+    transform: translateX(0);
+  }
+  
+  .hamburger_navigation_menu {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    z-index: 100;
+  }
+  
+  .hamburger_navigation_line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 30px;
+  }
+
+.hamburger_navigation_line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger_navigation_line:nth-child(2) {
+  top: 50%;
+}
+
+.hamburger_navigation_line:nth-child(3) {
+  top: 100%;
+}
+
+ /* 以下、ハンバーガーメニューの挙動については課題範囲外と質問ログで見たもののできるところまで試したく記載しました。
+ 　　しかしクリックしてもメニューを開閉することができず挫折したため、CSSの範囲ではどのようにしたら良いかご教示いただけますと幸いです。 */
+.hamburger_checkbox:checked + .hamburger_navigation_line:nth-child(1) {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger_checkbox:checked + .hamburger_navigation_line:nth-child(3) {
+  top: 1000;
+  transform: rotate(-45deg);
+
+}
+
+   .hamburger_navigation_contents {
+    position: fixed;
+    top: 60px;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+  }
+
+  .hamburger_navigation_contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hamburger_navigation_contents li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger_navigation_contents a {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+.navi_contents {
+  display: flex;
+  width: fit-content;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  margin-right: 45px;
+}
+
+.navi_contents_small {
+  font-size: 10px;
+  margin-right: 45px;
+  text-align: center;
+}
+
+.navi_orange {
+  display: flex;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #f79314;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main {
+  background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 28px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/for-html-css-task/top-hero-sp.jpg);
+    margin: 0;
+    padding-bottom: 0px;
+  }
+}
+
+.main_view {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media screen and (max-width: 1080px) {
+.main_view {
+    padding-left: 36px;
+    padding-right: 36px;
+}
+}
+
+.main_container {
+  text-align: center;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 768px) {
+  .main_container {
+    position: relative;
+    top: 400px;
+    margin-bottom: 50%;
+    width: 100%;
+  }
+}
+
+.main_container_text {
+  font-size: 38px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .main_container_text {
+    font-size: 25px;
+  }
+}
+
+.main_image {
+  display: flex;
+  margin-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_1 {
+  margin-right: 8px;
+}
+
+.image_2 {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main_image {
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 8px;
+    width: 100%;
+  }
+
+  .image_1 {
+  margin-right: 8px;
+  width: 27.5%;
+  }
+
+.image_2 {
+  margin-right: 8px;
+  width: 40%;
+  }
+
+.image_3 {
+  margin-right: 0px;
+  }
+}
+
+.to_contact_orange {
+  display: flex;
+  margin: auto;
+  margin-bottom: 70px;
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  height: 64px;
+  border-radius: 38px;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  background-color: #f79214;
+  text-align: center;
+}
+
+.to_contact_orange:hover {
+  opacity: 0.7;
+}
+
+a.to_contact_link {
+  text-decoration: none;
+  color: white;
+}
+
+.attention {
+    list-style: none;
+    font-size: 12px;
+    color: #a2a2a4;
+    padding-left: 0;
+    padding-bottom: 28px;
+  }
+
+a.attention_link {
+  text-decoration: none;
+  color: #a2a2a4;
+}
+
+@media only screen and (max-width: 768px) {
+  .attention{
+    display: block;
+    position: relative;
+    top: 120px;
+    margin-bottom: 100px;
+  }
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 44px;
+  background-color: #f79314;
+}
+
+.ribbon {
+  margin: auto;
+  align-items: center;
+  max-width: 1040px;
+}
+
+.about_in {
+  display: flex;
+  margin: auto;
+  position: relative;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about_in{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+video {
+width: 50%;
+max-width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .video{
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .video{
+    width: 100%;
+  }
+}
+
+.about_explanation {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 32px;
+  margin-bottom: 0;
+  flex-direction: column;
+  font-size: 14px;
+  font-family: "Lato",sans-serif;
+  color: white;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about_explanation{
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about_explanation{
+    width: 100%;
+  }
+}
+
+h3 {
+  font-family: "Lato",sans-serif;
+  font-size: 38px;
+  margin-bottom: 0;
+}
+
+.about_explanation p {
+  font-size: 16px;
+  line-height: 26px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.reskilling-logo img{
+  width: 158px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .reskilling-logo{
+    margin: 0 auto;
+  }
+}
